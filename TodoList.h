@@ -48,6 +48,7 @@ public:
     int remove(string _task) {
 
         cout << "In remove" << endl;
+		// START WORK HERE! USE CIN.IGNORE OR SOMEHOW DELETE FIRST WORD OF EACH STRING IN VECTOR AND THEN CHECK
 
     };
     void printTodoList() {
