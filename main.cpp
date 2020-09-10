@@ -34,10 +34,10 @@ int main(int argc, char *argv[]) {
 		cout << "List Printed" << endl;
     }
 	if (firstArg.compare("printDay") == 0) {
-        cout << "Doing an add" << endl;
+        cout << "Doing a printDay" << endl;
         string date = argv[2];
 		mylist.printDaysTasks(date);
-		cout << "Print tasks on day: " << date << endl;
+		cout << "Printed tasks on day: " << date << endl;
     }
     return 0;
 }

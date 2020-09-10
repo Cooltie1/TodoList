@@ -48,7 +48,20 @@ public:
     int remove(string _task) {
 
         cout << "In remove" << endl;
+		cout << "tasks.size() = " << tasks.size() << endl;
+		int returnVal = 0;
 		// START WORK HERE! USE CIN.IGNORE OR SOMEHOW DELETE FIRST WORD OF EACH STRING IN VECTOR AND THEN CHECK
+		for(int i = tasks.size() - 1; i >= 0; i--) {
+			if(tasks.at(i).find(_task) == string::npos) {
+				cout << "Task not found in " << i <<endl;
+			}
+			else {
+				tasks.erase(tasks.begin() + i);
+				cout << "Task was located and erased in element " << i << endl;
+				returnVal = 1;
+			}
+		}
+		return returnVal;
 
     };
     void printTodoList() {
