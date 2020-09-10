@@ -50,7 +50,6 @@ public:
         cout << "In remove" << endl;
 		cout << "tasks.size() = " << tasks.size() << endl;
 		int returnVal = 0;
-		// START WORK HERE! USE CIN.IGNORE OR SOMEHOW DELETE FIRST WORD OF EACH STRING IN VECTOR AND THEN CHECK
 		for(int i = tasks.size() - 1; i >= 0; i--) {
 			if(tasks.at(i).find(_task) == string::npos) {
 				cout << "Task not found in " << i <<endl;
@@ -66,11 +65,24 @@ public:
     };
     void printTodoList() {
 
-        cout << "In list" << endl;
+        cout << "Printing all tasks..." << endl;
+		for (int i = 0; i < tasks.size(); i++) {
+			cout << tasks.at(i) << endl;
+		}
     }
     void printDaysTasks(string _date) {
 
-        cout << "In daysTask" << endl;
+        cout << "Printing all tasks for " << _date << "..." << endl;
+		for(int i = tasks.size() - 1; i >= 0; i--) {
+			if(tasks.at(i).find(_date) != string::npos) {
+				string tmpString;
+				tmpString = tasks.at(i);
+				tmpString = tmpString.replace(0, _date.length() + 1, "");
+				cout << tmpString << endl;
+			}
+		}
+
+
     }
 
 };
